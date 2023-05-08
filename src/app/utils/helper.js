@@ -1,5 +1,5 @@
 export const formatCotizationName = (name) => {
-  return name.replace('Dolar', '').replace('Contado con Liqui', 'CCL').trim()
+  return name.replace('Dolar', '').replace('turista', 'Turista').trim()
 }
 
 export const formatCotizationValue = (value) => {

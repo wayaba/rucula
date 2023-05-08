@@ -8,21 +8,28 @@ export const getCotization = async () => {
 
     const json = await response.json()
 
-    const pepe = json
+    return json
       .filter((item) =>
         [
           'Dolar Blue',
           'Dolar Oficial',
           'Dolar Bolsa',
-          'Dolar Contado con Liqui'
+          'Dolar turista'
         ].includes(item.casa.nombre)
       )
-      .map(({ casa }) => ({
-        name: casa.nombre,
-        buy: Number(casa.compra.replace(',', '.')),
-        sell: Number(casa.venta.replace(',', '.'))
-      }))
-    return pepe
+      .map(({ casa }) => {
+        const buy =
+          casa.compra === 'No Cotiza'
+            ? 0
+            : Number(casa.compra.replace(',', '.'))
+        const sell =
+          casa.venta === 'No Cotiza' ? 0 : Number(casa.venta.replace(',', '.'))
+        return {
+          name: casa.nombre,
+          buy: buy,
+          sell: sell
+        }
+      })
   } catch (e) {
     console.log('error en el fetch', e)
   }

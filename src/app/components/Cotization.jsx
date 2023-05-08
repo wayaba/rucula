@@ -8,7 +8,7 @@ export function Cotization({ cotization, onChange, idSelected }) {
       <ul className="flex flex-col text-white">
         {cotization.map(({ name, buy, sell, id }) => (
           <li key={name} className="flex justify-between items-end gap-4">
-            <div className=" font-bold">
+            <div className="font-bold">
               <input
                 type="radio"
                 className="mr-2"
@@ -20,13 +20,13 @@ export function Cotization({ cotization, onChange, idSelected }) {
               {formatCotizationName(name)}
             </div>
             <div className="flex items-center gap-4">
-              <div className="text-xl font-bold ">
+              <div className="text-md  ">
                 <div className="text-sm opacity-50">Compra</div>
-                {formatCotizationValue(buy)}
+                {buy === 0 ? 'No Cotiza' : formatCotizationValue(buy)}
               </div>
-              <div className="text-xl font-bold ">
+              <div className="text-md  ">
                 <div className="text-sm opacity-50">Venta</div>
-                {formatCotizationValue(sell)}
+                {sell === 0 ? 'No Cotiza' : formatCotizationValue(sell)}
               </div>
             </div>
           </li>

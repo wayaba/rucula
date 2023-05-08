@@ -6,7 +6,6 @@ export function Calculator({ cotization, idSelected, amount, onChange }) {
   )
   const { name, buy, sell } = currentCotization
 
-  console.log('aaa', name)
   return (
     <>
       <section className="rounded-xl p-4">
@@ -28,15 +27,17 @@ export function Calculator({ cotization, idSelected, amount, onChange }) {
       <section className=" bg-emerald-800 rounded-xl p-4">
         <ul className="flex flex-col gap-4 text-white">
           <li key={name} className="flex items-center justify-around gap-2">
-            <div className="w-1/3 font-bold">{formatCotizationName(name)}</div>
+            <div className="font-bold">{formatCotizationName(name)}</div>
             <div className="grid items-end text-end gap-4">
               <div className="text-xl font-bold ">
                 <div className="text-sm opacity-50">Compra</div>
-                {formatCotizationValue(amount / buy)}
+                {buy === 0 ? 'No Cotiza' : formatCotizationValue(amount / buy)}
               </div>
               <div className="text-xl font-bold ">
                 <div className="text-sm opacity-50">Venta</div>
-                {formatCotizationValue(amount / sell)}
+                {sell === 0
+                  ? 'No Cotiza'
+                  : formatCotizationValue(amount / sell)}
               </div>
             </div>
           </li>
