@@ -1,8 +1,7 @@
 'use client'
 
-const formatCotizationName = (name) => {
-  return name.replace('Dolar', '').replace('Contado con Liqui', 'CCL').trim()
-}
+import { formatCotizationName, formatCotizationValue } from '../utils/helper'
+
 export function Cotization({ cotization, onChange, idSelected }) {
   return (
     <section className=" bg-emerald-800 rounded-xl p-4">
@@ -23,17 +22,11 @@ export function Cotization({ cotization, onChange, idSelected }) {
             <div className="flex items-center gap-4">
               <div className="text-xl font-bold ">
                 <div className="text-sm opacity-50">Compra</div>
-                {Number(buy).toLocaleString('es-AR', {
-                  style: 'currency',
-                  currency: 'ARS'
-                })}
+                {formatCotizationValue(buy)}
               </div>
               <div className="text-xl font-bold ">
                 <div className="text-sm opacity-50">Venta</div>
-                {Number(sell).toLocaleString('es-AR', {
-                  style: 'currency',
-                  currency: 'ARS'
-                })}
+                {formatCotizationValue(sell)}
               </div>
             </div>
           </li>

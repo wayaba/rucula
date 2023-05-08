@@ -1,6 +1,4 @@
-const formatCotizationName = (name) => {
-  return name.replace('Dolar', '').replace('Contado con Liqui', 'CCL').trim()
-}
+import { formatCotizationName, formatCotizationValue } from '../utils/helper'
 
 export function Calculator({ cotization, idSelected, amount, onChange }) {
   return (
@@ -8,11 +6,12 @@ export function Calculator({ cotization, idSelected, amount, onChange }) {
       <section className="rounded-xl p-4">
         <form className="w-full">
           <label className="block space-y-3 text-lg">
-            <span>Monto en $ Argentinos:</span>
+            <span>Monto en $ argentinos: {formatCotizationValue(amount)} </span>
             <input
               className="block w-full rounded-full bg-gray-200 p-2 text-right text-3xl text-gray-800 font-bold"
               type="number"
               value={amount}
+              onClick={(e) => e.target.select()}
               onChange={(e) => onChange(e.target.value)}
             />
           </label>
@@ -28,17 +27,11 @@ export function Calculator({ cotization, idSelected, amount, onChange }) {
                 <div className="flex items-center gap-4">
                   <div className="text-xl font-bold ">
                     <div className="text-sm opacity-50">Compra</div>
-                    {Number(amount / buy).toLocaleString('es-AR', {
-                      style: 'currency',
-                      currency: 'ARS'
-                    })}
+                    {formatCotizationValue(amount / buy)}
                   </div>
                   <div className="text-xl font-bold ">
                     <div className="text-sm opacity-50">Venta</div>
-                    {Number(amount / sell).toLocaleString('es-AR', {
-                      style: 'currency',
-                      currency: 'ARS'
-                    })}
+                    {formatCotizationValue(amount / sell)}
                   </div>
                 </div>
               </li>

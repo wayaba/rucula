@@ -7,7 +7,7 @@ import { Footer } from '../components/Footer'
 import { Calculator } from '../components/Calculator'
 
 export default function HomeClient({ cotization }) {
-  const [amount, setAmount] = useState(1)
+  const [amount, setAmount] = useState(0)
   const [idSelected, setIdSelected] = useState(0)
   const [dateTime, setDateTime] = useState('')
 
