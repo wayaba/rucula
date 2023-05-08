@@ -3,7 +3,12 @@ import HomeClient from './client'
 
 export default async function Home() {
   const cotization = await getCotization()
-  const currentDateTime = new Date().toLocaleString()
 
-  return <HomeClient cotization={cotization} dateTime={currentDateTime} />
+  return (
+    <HomeClient
+      cotization={cotization.map((item, index) => {
+        return { ...item, id: index }
+      })}
+    />
+  )
 }
