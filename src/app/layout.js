@@ -5,7 +5,8 @@ const inter = Trispace({ subsets: ['latin'], weight: ['400', '700'] })
 
 export const metadata = {
   title: 'Rúcula',
-  description: 'Consulta cotización del dólar en Argentina 🧉'
+  description:
+    'Consultá la cotización del dólar en Argentina 🧉 y fijate cuantos pesos vale cada tipo de dólar'
 }
 
 export default function RootLayout({ children }) {

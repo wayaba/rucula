@@ -5,7 +5,7 @@ import { formatCotizationName, formatCotizationValue } from '../utils/helper'
 export function Cotization({ cotization, onChange, idSelected }) {
   return (
     <section className=" bg-emerald-800 rounded-xl p-4">
-      <ul className="flex flex-col gap-4 text-white">
+      <ul className="flex flex-col text-white">
         {cotization.map(({ name, buy, sell, id }) => (
           <li key={name} className="flex justify-between items-end gap-4">
             <div className=" font-bold">

@@ -22,20 +22,24 @@ export default function HomeClient({ cotization }) {
     setAmount(value)
   }
   return (
-    <main className="bg-gray-600 text-white shadow-md rounded-xl p-4">
-      <Header dateTime={dateTime} />
-      <Cotization
-        cotization={cotization}
-        idSelected={idSelected}
-        onChange={(value) => handleChange(value)}
-      />
-      <Calculator
-        cotization={cotization}
-        idSelected={idSelected}
-        amount={amount}
-        onChange={(value) => handleChangeAmount(value)}
-      />
-      <Footer author="Pablo Pedraza" github="wayaba" />
-    </main>
+    <>
+      <section className="bg-gray-600 text-white shadow-md rounded-xl p-2 m-2">
+        <Header dateTime={dateTime} />
+        <Cotization
+          cotization={cotization}
+          idSelected={idSelected}
+          onChange={(value) => handleChange(value)}
+        />
+        <Calculator
+          cotization={cotization}
+          idSelected={idSelected}
+          amount={amount}
+          onChange={(value) => handleChangeAmount(value)}
+        />
+      </section>
+      <section>
+        <Footer author="Pablo Pedraza" github="wayaba" />
+      </section>
+    </>
   )
 }

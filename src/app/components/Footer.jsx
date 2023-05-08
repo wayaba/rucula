@@ -1,6 +1,6 @@
 export function Footer({ author, github }) {
   return (
-    <footer className="text-xs lg:mt-3  md:mt-3 md:pb-2 mt-10 pb-5 text-center opacity-60  text-white/80">
+    <footer className="text-xs text-center opacity-60  text-white/80">
       {' '}
       Desarrollado por{' '}
       <a
