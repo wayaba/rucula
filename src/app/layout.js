@@ -4,7 +4,7 @@ import { Trispace } from 'next/font/google'
 const inter = Trispace({ subsets: ['latin'], weight: ['400', '700'] })
 
 export const metadata = {
-  title: 'Rúcula',
+  title: 'Rúcula 🥬',
   description: 'Consulta cotización del dólar en Argentina'
 }
 
