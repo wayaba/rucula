@@ -22,7 +22,6 @@ export const getCotization = async () => {
         buy: Number(casa.compra.replace(',', '.')),
         sell: Number(casa.venta.replace(',', '.'))
       }))
-    console.log('este es el json', pepe)
     return pepe
   } catch (e) {
     console.log('error en el fetch', e)
