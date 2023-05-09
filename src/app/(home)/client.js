@@ -23,8 +23,11 @@ export default function HomeClient({ cotization }) {
   }
   return (
     <>
+      <Header />
       <section className="bg-gray-600 text-white shadow-md rounded-xl p-2 m-2">
-        <Header dateTime={dateTime} />
+        <div className="text-center m-1">
+          <small className="opacity-50 text-center">{dateTime}</small>
+        </div>
         <Cotization
           cotization={cotization}
           idSelected={idSelected}
@@ -37,9 +40,8 @@ export default function HomeClient({ cotization }) {
           onChange={(value) => handleChangeAmount(value)}
         />
       </section>
-      <section>
-        <Footer author="Pablo Pedraza" github="wayaba" />
-      </section>
+
+      <Footer author="Pablo Pedraza" github="wayaba" />
     </>
   )
 }

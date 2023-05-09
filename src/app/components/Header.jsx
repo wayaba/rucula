@@ -1,8 +1,7 @@
 export function Header({ dateTime }) {
   return (
-    <header className="text-center">
-      <h1 className="text-4xl">Cotización Dólar 💸</h1>
-      <small className="opacity-50">{dateTime}</small>
+    <header className="text-center text-white">
+      <h1 className="text-4xl">Rúcula 💸</h1>
     </header>
   )
 }
