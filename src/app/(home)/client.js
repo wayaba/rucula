@@ -21,6 +21,7 @@ export default function HomeClient({ cotization }) {
   const handleChangeAmount = (value) => {
     setAmount(value)
   }
+
   return (
     <>
       <Header />

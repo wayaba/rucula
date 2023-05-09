@@ -34,3 +34,4 @@ export const getCotization = async () => {
     console.log('error en el fetch', e)
   }
 }
+//https://www.dolarsi.com/api/api.php?type=cotizador

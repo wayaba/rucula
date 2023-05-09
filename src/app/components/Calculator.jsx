@@ -13,6 +13,8 @@ export function Calculator({ cotization, idSelected, amount, onChange }) {
   //   },
   //   {
   //     name: 'Dólares U$D',
+  //
+  //
   //     value: 'dolares'
   //   }
   // ]
