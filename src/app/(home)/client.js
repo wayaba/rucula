@@ -7,7 +7,6 @@ import { Footer } from '../components/Footer'
 import { Calculator } from '../components/Calculator'
 
 export default function HomeClient({ cotization }) {
-  console.log('en el cliente', cotization)
   const [amount, setAmount] = useState(0)
   const [idSelected, setIdSelected] = useState(0)
   const [dateTime, setDateTime] = useState('')

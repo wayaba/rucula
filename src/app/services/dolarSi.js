@@ -4,10 +4,13 @@ export const getCotization = async () => {
       'https://www.dolarsi.com/api/api.php?type=valoresprincipales'
     )
 
-    if (!response.ok) throw new Error('Error al hacer fetch')
+    if (!response.ok)
+      return res.text().then((text) => {
+        throw new Error(text)
+      })
 
     const json = await response.json()
-    console.log('json de la peticion', json)
+
     return json
       .filter((item) =>
         [
