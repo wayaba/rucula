@@ -7,7 +7,7 @@ export const getCotization = async () => {
     if (!response.ok) throw new Error('Error al hacer fetch')
 
     const json = await response.json()
-
+    console.log('json de la peticion', json)
     return json
       .filter((item) =>
         [
