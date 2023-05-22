@@ -6,6 +6,7 @@ export default async function Home() {
   const cotization = await getCotization()
   return (
     <HomeClient
+      dateTime={new Date().toLocaleString()}
       cotization={cotization.map((item, index) => {
         return { ...item, id: index }
       })}

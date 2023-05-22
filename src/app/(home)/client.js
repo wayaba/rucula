@@ -1,15 +1,14 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Cotization } from '../components/Cotization'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 import { Calculator } from '../components/Calculator'
 
-export default function HomeClient({ cotization }) {
+export default function HomeClient({ cotization, dateTime }) {
   const [amount, setAmount] = useState(0)
   const [idSelected, setIdSelected] = useState(0)
-  const [dateTime, setDateTime] = useState('')
 
   const handleChange = (value) => {
     setIdSelected(value)
