@@ -11,7 +11,7 @@ export const getCotization = async () => {
 
     const json = await response.json()
 
-    return json
+    const cotizations = json
       .filter((item) =>
         [
           'Dolar Blue',
@@ -20,7 +20,7 @@ export const getCotization = async () => {
           'Dolar turista'
         ].includes(item.casa.nombre)
       )
-      .map(({ casa }) => {
+      .map(({ casa }, index) => {
         const buy =
           casa.compra === 'No Cotiza'
             ? 0
@@ -30,9 +30,15 @@ export const getCotization = async () => {
         return {
           name: casa.nombre,
           buy: buy,
-          sell: sell
+          sell: sell,
+          id: index
         }
       })
+
+    return {
+      dateTime: new Date().toLocaleString(),
+      items: cotizations
+    }
   } catch (e) {
     console.log('error en el fetch', e)
   }
