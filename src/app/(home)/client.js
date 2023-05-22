@@ -41,7 +41,7 @@ export default function HomeClient({ cotization }) {
             onClick={handleClickUpdate}
           >
             <small className="opacity-50 text-center mr-2">
-              {currentCotization.dateTime}
+              {new Date().toLocaleString()}
             </small>
             <ReloadIcon />
           </button>
