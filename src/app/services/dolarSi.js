@@ -36,7 +36,7 @@ export const getCotization = async () => {
       })
 
     return {
-      dateTime: new Date().toLocaleString(),
+      dateTime: new Date(),
       items: cotizations
     }
   } catch (e) {

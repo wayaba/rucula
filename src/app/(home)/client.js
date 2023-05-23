@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Cotization } from '../components/Cotization'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
@@ -15,6 +15,14 @@ export default function HomeClient({ cotization }) {
   const [currentCotization, setCurrentCotization] = useState(cotization)
   const [loading, setLoading] = useState(false)
 
+  const [currentDateTime, setCurrentDateTime] = useState('23/5/2023, 9:56:11')
+
+  useEffect(
+    () => setCurrentDateTime(new Date(cotization.dateTime).toLocaleString()),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  )
+
   const handleChange = (value) => {
     setIdSelected(value)
   }
@@ -26,6 +34,7 @@ export default function HomeClient({ cotization }) {
     setLoading(true)
     const newCotization = await getCotization()
     setCurrentCotization(() => newCotization)
+    setCurrentDateTime(new Date().toLocaleString())
     setLoading(false)
   }
 
@@ -41,7 +50,7 @@ export default function HomeClient({ cotization }) {
             onClick={handleClickUpdate}
           >
             <small className="opacity-50 text-center mr-2">
-              {new Date().toLocaleString()}
+              {currentDateTime}
             </small>
             <ReloadIcon />
           </button>
