@@ -5,13 +5,14 @@ import { Cotization } from '../components/Cotization'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 import { Calculator } from '../components/Calculator'
-import { ReloadIcon } from '../components/Icons'
+import { Cafecito, ReloadIcon } from '../components/Icons'
 import { getCotization } from '../services/dolarSi'
 import { Spinner } from '../components/Spinner'
 
 export default function HomeClient({ cotization }) {
   const [amount, setAmount] = useState(0)
-  const [idSelected, setIdSelected] = useState(0)
+  const [idSelected, setIdSelected] = useState(1)
+  const [currencySelected, setCurrencySelected] = useState('pesos')
   const [currentCotization, setCurrentCotization] = useState(cotization)
   const [loading, setLoading] = useState(false)
 
@@ -26,6 +27,10 @@ export default function HomeClient({ cotization }) {
   const handleChange = (value) => {
     setIdSelected(value)
   }
+  const handleChangeCurrency = (value) => {
+    setCurrencySelected(value)
+  }
+
   const handleChangeAmount = (value) => {
     setAmount(value)
   }
@@ -43,9 +48,17 @@ export default function HomeClient({ cotization }) {
       <Header />
       {loading && <Spinner />}
       <section className="bg-gray-600 text-white shadow-md rounded-xl p-2 m-2">
-        <div className="flex flex-1 text-center m-1 justify-center">
+        <div className="flex flex-1 text-center m-1 justify-center gap-2">
+          <a
+            href="https://cafecito.app/pablojpedraza"
+            rel="noopener"
+            target="_blank"
+            className="text-center items-center justify-center hover:opacity-70"
+          >
+            <Cafecito />
+          </a>
           <button
-            className="flex items-center cursor-pointer"
+            className="flex items-center cursor-pointer hover:opacity-70"
             title="Actualizar"
             onClick={handleClickUpdate}
           >
@@ -64,8 +77,10 @@ export default function HomeClient({ cotization }) {
         <Calculator
           cotization={currentCotization.items}
           idSelected={idSelected}
+          currencySelected={currencySelected}
           amount={amount}
           onChange={(value) => handleChangeAmount(value)}
+          handleChangeCurrency={(value) => handleChangeCurrency(value)}
         />
       </section>
 

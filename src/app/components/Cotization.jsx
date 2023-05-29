@@ -8,17 +8,24 @@ export function Cotization({ cotization, onChange, idSelected }) {
       <ul className="flex flex-col text-white">
         {cotization.map(({ name, buy, sell, id }) => (
           <li key={name} className="flex justify-between items-end gap-4">
-            <div className="font-bold">
+            <label>
               <input
-                type="radio"
-                className="mr-2"
-                value={id}
+                defaultChecked={idSelected.toString() === id.toString()}
                 checked={idSelected.toString() === id.toString()}
+                className="peer"
+                hidden
+                type="radio"
                 name="currencyType"
+                value={id.toString()}
                 onChange={(e) => onChange(e.target.value)}
               />
-              {formatCotizationName(name)}
-            </div>
+              <span
+                className="peer-checked:opacity-100 hover:opacity-75 hover:scale-125 transition cursor-pointer opacity-40 border
+              rounded-md p-2 peer-checked:bg-emerald-900 "
+              >
+                {formatCotizationName(name)}
+              </span>
+            </label>
             <div className="flex items-center gap-4">
               <div className="text-md  ">
                 <div className="text-sm opacity-50">Compra</div>
