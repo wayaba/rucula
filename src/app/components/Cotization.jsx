@@ -3,15 +3,17 @@
 import { formatCotizationName, formatCotizationValue } from '../utils/helper'
 
 export function Cotization({ cotization, onChange, idSelected }) {
+  console.log('idSelected',idSelected)
   return (
-    <section className=" bg-emerald-800 rounded-xl p-4">
-      <ul className="flex flex-col text-white">
+    <section className=" bg-emerald-800 rounded-xl p-2">
+      <ul className="flex flex-col text-white gap-2">
         {cotization.map(({ name, buy, sell, id }) => (
-          <li key={name} className="flex justify-between items-end gap-4">
+          
+          <li key={name} className="flex justify-between gap-4 items-center">
             <label>
               <input
-                defaultChecked={idSelected.toString() === id.toString()}
-                checked={idSelected.toString() === id.toString()}
+              
+              checked={idSelected.toString() === id.toString()}
                 className="peer"
                 hidden
                 type="radio"
@@ -28,11 +30,11 @@ export function Cotization({ cotization, onChange, idSelected }) {
             </label>
             <div className="flex items-center gap-4">
               <div className="text-md  ">
-                <div className="text-sm opacity-50">Compra</div>
+                <div className="text-xs opacity-50">Compra</div>
                 {buy === 0 ? 'No Cotiza' : formatCotizationValue(buy)}
               </div>
               <div className="text-md  ">
-                <div className="text-sm opacity-50">Venta</div>
+                <div className="text-xs opacity-50">Venta</div>
                 {sell === 0 ? 'No Cotiza' : formatCotizationValue(sell)}
               </div>
             </div>

@@ -27,9 +27,6 @@ export function Calculator({
               <li key={item.value} className="flex justify-between gap-4">
                 <label>
                   <input
-                    defaultChecked={
-                      currencySelected.toString() === item.value.toString()
-                    }
                     checked={currencySelected === item.value.toString()}
                     className="peer"
                     hidden
@@ -62,7 +59,7 @@ export function Calculator({
           </label>
         </form>
       </section>
-      <section className=" bg-emerald-800 rounded-xl p-4">
+      <section className=" bg-emerald-800 rounded-xl p-2">
         <ul className="flex flex-col gap-4 text-white">
           <li key={name} className="flex items-center justify-around gap-2">
             <div className="font-bold">
@@ -70,13 +67,13 @@ export function Calculator({
             </div>
             <div className="grid items-end text-end gap-4">
               <div className="text-xl font-bold ">
-                <div className="text-sm opacity-50">Compra</div>
+                <div className="text-xs opacity-50">Compra</div>
                 {buy === 0
                   ? 'No Cotiza'
                   : convertCurrency(amount, buy, currencySelected)}
               </div>
               <div className="text-xl font-bold ">
-                <div className="text-sm opacity-50">Venta</div>
+                <div className="text-xs opacity-50">Venta</div>
                 {sell === 0
                   ? 'No Cotiza'
                   : convertCurrency(amount, sell, currencySelected)}
