@@ -3,7 +3,6 @@
 import { formatCotizationName, formatCotizationValue } from '../utils/helper'
 
 export function Cotization({ cotization, onChange, idSelected }) {
-  console.log('idSelected',idSelected)
   return (
     <section className=" bg-emerald-800 rounded-xl p-2">
       <ul className="flex flex-col text-white gap-2">
