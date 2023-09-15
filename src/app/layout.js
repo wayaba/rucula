@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="bg-gray-800 grid h-screen items-center justify-center">
+        <main className="bg-gray-800 grid min-main-screen items-center justify-center">
           {children}
         </main>
       </body>
