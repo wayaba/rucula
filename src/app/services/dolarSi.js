@@ -19,7 +19,7 @@ export const getCotization = async () => {
         const buy = item.compra === null ? 0 : item.compra
         const sell = item.venta === null ? 0 : item.venta
         return {
-          name: item.nombre,
+          name: item.casa === 'solidario' ? 'Turista' : item.nombre,
           buy: buy,
           sell: sell,
           id: index
