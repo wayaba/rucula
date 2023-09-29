@@ -1,7 +1,7 @@
 # Rúcula
 
 - desarrollado con Next + ReactJs (Javascript) + Tailwind
-- 
+  
 A cuanto esta el dolar hoy?
 
 Para correr localmente:
